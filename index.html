@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Randrianarivo Herinirina Luc Arson — Lead Developer Full-stack JS</title>
+<meta name="description" content="Lead Developer Full-stack JavaScript. React, Next.js, NestJS, Directus, architecture hexagonale et développement agentique. 6+ ans de SaaS B2B logistique.">
+<meta name="author" content="Randrianarivo Herinirina Luc Arson">
+<meta name="theme-color" content="#EDE9E3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Randrianarivo Herinirina Luc Arson — Lead Developer Full-stack JS">
+<meta property="og:description" content="Je conçois et je livre des produits de bout en bout, de la base de données à l'interface.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/cv.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23141210'/><text x='50' y='68' font-size='58' font-family='monospace' font-weight='700' fill='%23D8402F' text-anchor='middle'>R</text></svg>">
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <div class="loader__label">
+      <span class="mono">CHARGEMENT</span>
+      <span class="mono loader__pct" id="loaderPct">00</span>
+    </div>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+    <div class="loader__name mono">RANDRIANARIVO · H · L · ARSON</div>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
+<div class="scrollbar" aria-hidden="true"><i id="scrollProgress"></i></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav__brand mono" data-magnetic>
+    <span class="nav__mark">R</span><span class="nav__brandtxt">RANDRIANARIVO<em>.</em></span>
+  </a>
+  <nav class="nav__links mono" aria-label="Navigation principale">
+    <a href="#stack" data-navlink>01 Stack</a>
+    <a href="#experience" data-navlink>02 Expérience</a>
+    <a href="#parcours" data-navlink>03 Parcours</a>
+    <a href="#produits" data-navlink>04 Produits</a>
+    <a href="#contact" data-navlink>05 Contact</a>
+  </nav>
+  <div class="nav__actions">
+    <button class="iconbtn" id="themeToggle" type="button" aria-label="Changer de thème" data-magnetic>
+      <svg viewBox="0 0 24 24" class="ico-sun" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><g><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></g></svg>
+      <svg viewBox="0 0 24 24" class="ico-moon" aria-hidden="true"><path d="M20 13.5A8.2 8.2 0 1 1 10.5 4a6.6 6.6 0 0 0 9.5 9.5Z"/></svg>
+    </button>
+    <button class="btn btn--sm" id="pdfBtnNav" type="button" data-magnetic>
+      <span>CV PDF</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v3h16v-3"/></svg>
+    </button>
+    <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu__inner">
+    <a href="#stack" class="menu__link"><span class="mono">01</span> Stack technique</a>
+    <a href="#experience" class="menu__link"><span class="mono">02</span> Expérience récente</a>
+    <a href="#parcours" class="menu__link"><span class="mono">03</span> Parcours</a>
+    <a href="#produits" class="menu__link"><span class="mono">04</span> Produits SupplyOS</a>
+    <a href="#profil" class="menu__link"><span class="mono">05</span> Profil &amp; formation</a>
+    <a href="#contact" class="menu__link"><span class="mono">06</span> Contact</a>
+  </div>
+</div>
+
+<main class="site" id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="corner corner--tl" aria-hidden="true"></div>
+    <div class="corner corner--tr" aria-hidden="true"></div>
+
+    <div class="hero__grid">
+      <div class="hero__main">
+        <p class="kicker mono" data-reveal><i></i> CURRICULUM VITAE — 2026</p>
+
+        <h1 class="hero__title" aria-label="Randrianarivo Herinirina Luc Arson">
+          <span class="line" data-split>RANDRIANARIVO</span>
+          <span class="line" data-split>HERINIRINA <em>LUC</em></span>
+          <span class="line" data-split>ARSON</span>
+        </h1>
+
+        <p class="hero__role mono" data-reveal>&gt; <span id="scramble">Lead Developer · Full-stack JavaScript</span><b class="caret"></b></p>
+
+        <p class="hero__intro" data-reveal>
+          Développeur full-stack, je conçois et je livre des produits <mark>de bout en bout</mark>, de la base
+          de données à l'interface. 6 ans passés à construire du <mark>SaaS B2B</mark> aux côtés de SupplyOS
+          (spécialiste logistique &amp; e-commerce) m'ont rendu <mark>autonome, rapide et adaptable</mark>.
+          Stack React / Node / Directus + workflow IA Claude Code, et l'envie d'explorer
+          <mark>de nouveaux domaines</mark>.
+        </p>
+
+        <div class="hero__cta" data-reveal>
+          <button class="btn btn--primary" id="pdfBtnHero" type="button" data-magnetic>
+            <span>Générer mon CV en PDF</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v3h16v-3"/></svg>
+          </button>
+          <a class="btn" href="#experience" data-magnetic><span>Voir le travail</span></a>
+        </div>
+
+        <ul class="hero__meta mono" data-reveal>
+          <li><span>LOCALISATION</span><b>Antananarivo, MG · UTC+3</b></li>
+          <li><span>GITHUB</span><a href="https://github.com/LucasRandrianarivo" target="_blank" rel="noopener">github.com/LucasRandrianarivo</a></li>
+          <li><span>EMAIL</span><a href="mailto:herinirinalucarsonrandrianariv@gmail.com">herinirinalucarsonrandrianariv@gmail.com</a></li>
+          <li><span>LINKEDIN</span><a href="https://www.linkedin.com/in/herinirina-luc-arson" target="_blank" rel="noopener">in/herinirina-luc-arson</a></li>
+        </ul>
+      </div>
+
+      <aside class="hero__side">
+        <figure class="portrait" data-tilt>
+          <div class="portrait__frame">
+            <img src="assets/img/portrait.jpg" alt="Portrait de Randrianarivo Herinirina Luc Arson" id="portrait" loading="eager">
+            <div class="portrait__fallback mono" id="portraitFallback" hidden><span>R·A</span><small>assets/img/portrait.jpg</small></div>
+          </div>
+          <figcaption class="mono">CV / 2026</figcaption>
+        </figure>
+        <div class="status mono" data-reveal><i class="pulse"></i> OPEN TO WORK</div>
+      </aside>
+    </div>
+
+    <!-- stats -->
+    <div class="stats" id="stats">
+      <div class="stat" data-reveal><b><span class="num" data-count="6">0</span><i>+</i></b><span class="mono">Années d'expérience</span></div>
+      <div class="stat" data-reveal><b><span class="num" data-count="15">0</span><i>+</i></b><span class="mono">Projets livrés</span></div>
+      <div class="stat" data-reveal><b><span class="num" data-count="10">0</span><i>+</i></b><span class="mono">Connecteurs &amp; intégrations</span></div>
+      <div class="stat" data-reveal><b><span class="num" data-count="4">0</span></b><span class="mono">Modules métier WMS/OMS/TMS/PIM</span></div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>React</span><i>·</i><span>Next.js</span><i>·</i><span>TypeScript</span><i>·</i><span>Node.js</span><i>·</i><span>NestJS</span><i>·</i><span>Directus</span><i>·</i><span>PostgreSQL</span><i>·</i><span>Architecture hexagonale</span><i>·</i><span>Développement agentique</span><i>·</i><span>Claude Code</span><i>·</i><span>Docker</span><i>·</i><span>React Native</span><i>·</i>
+        <span>React</span><i>·</i><span>Next.js</span><i>·</i><span>TypeScript</span><i>·</i><span>Node.js</span><i>·</i><span>NestJS</span><i>·</i><span>Directus</span><i>·</i><span>PostgreSQL</span><i>·</i><span>Architecture hexagonale</span><i>·</i><span>Développement agentique</span><i>·</i><span>Claude Code</span><i>·</i><span>Docker</span><i>·</i><span>React Native</span><i>·</i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 STACK ============ -->
+  <section class="section" id="stack">
+    <header class="section__head">
+      <span class="section__num mono">01</span>
+      <h2 class="section__title" data-split-words>Stack technique</h2>
+      <p class="section__lead mono" data-reveal>Ce que j'utilise au quotidien, du composant à la mise en prod.</p>
+    </header>
+
+    <div class="stackgrid">
+      <div class="stackrow" data-reveal>
+        <h3 class="mono">Frontend</h3>
+        <ul class="chips">
+          <li class="is-key">React</li><li class="is-key">Next.js</li><li class="is-key">TypeScript</li><li>React Native</li><li>Redux Toolkit</li><li>Material UI</li><li>Chakra UI</li><li>Ant Design</li><li>Styled Components</li>
+        </ul>
+      </div>
+      <div class="stackrow" data-reveal>
+        <h3 class="mono">Backend</h3>
+        <ul class="chips">
+          <li class="is-key">Node.js</li><li class="is-key">NestJS</li><li>Express</li><li>REST API</li><li>GraphQL</li><li>TypeORM</li><li class="is-key">Architecture hexagonale</li><li>Tests (Jest / e2e)</li>
+        </ul>
+      </div>
+      <div class="stackrow" data-reveal>
+        <h3 class="mono">Base de données</h3>
+        <ul class="chips">
+          <li class="is-key">PostgreSQL</li><li>MongoDB</li><li>MySQL</li><li>SQLite</li><li>Supabase</li>
+        </ul>
+      </div>
+      <div class="stackrow" data-reveal>
+        <h3 class="mono">No-code / CMS</h3>
+        <ul class="chips">
+          <li>WeWeb</li><li class="is-key">Directus</li><li>Xano</li><li>FlutterFlow</li><li>Make</li>
+        </ul>
+      </div>
+      <div class="stackrow stackrow--hl" data-reveal>
+        <h3 class="mono">Développement agentique / IA</h3>
+        <ul class="chips">
+          <li class="is-key">Claude Code</li><li class="is-key">Création de skills</li><li class="is-key">Sub-agents custom</li><li>Règles CLAUDE.md</li><li>Slash commands</li><li>MCP servers</li><li>Cursor</li><li>Prompt engineering</li>
+        </ul>
+      </div>
+      <div class="stackrow" data-reveal>
+        <h3 class="mono">DevOps &amp; tools</h3>
+        <ul class="chips">
+          <li>Docker</li><li>Git / GitHub / GitLab</li><li class="is-key">Linear</li><li>Figma</li><li>Postman</li><li>Méthode Agile</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 EXPÉRIENCE RÉCENTE ============ -->
+  <section class="section section--alt" id="experience">
+    <header class="section__head">
+      <span class="section__num mono">02</span>
+      <h2 class="section__title" data-split-words>Expérience — récente</h2>
+      <p class="section__lead mono" data-reveal>3+ ans sur un même produit : de la première ligne au rôle de Lead.</p>
+    </header>
+
+    <article class="feature" data-reveal>
+      <div class="feature__aside">
+        <p class="mono feature__date"><i class="pulse"></i> Mars 2023 → Présent</p>
+        <h3 class="feature__org">SupplyTech</h3>
+        <p class="mono feature__loc">Antananarivo · Lille (FR)</p>
+        <p class="mono feature__hl">3+ ans sur Supply OS</p>
+        <a class="link mono" href="https://supplyos.com" target="_blank" rel="noopener">↗ supplyos.com</a>
+      </div>
+
+      <div class="feature__body">
+        <h4 class="feature__role">Développeur Full-stack JS <span>→</span> Lead</h4>
+        <p class="mono feature__tags">React · Node.js · Directus · WeWeb · Next.js · TypeScript · Architecture · Team Lead · Claude Code</p>
+
+        <ol class="facts">
+          <li data-reveal>
+            <span class="tag">Lead — depuis jan. 2026</span>
+            <p><b>Lead de la Supply OS V3</b> — refonte complète en <b>architecture hexagonale (Directus + NestJS)</b>, toujours hands-on. <i>Métier</i> : de l'analyse des besoins au delivery (cahiers des charges, roadmap &amp; estimations, impacts technico-commerciaux). <i>Technique</i> : découpage <b>domaine / ports / adapters</b>, multi-tenant, <b>tests unit + e2e Postgres</b>, <b>code reviews</b>, et workflow <b>Claude Code industrialisé</b> (skills &amp; sub-agents custom, CLAUDE.md, MCP) pour toute l'équipe.</p>
+          </li>
+          <li data-reveal>
+            <span class="tag">Supply OS V2</span>
+            <p>Front reconstruit <i>from-scratch</i> de la plateforme SaaS logistique <i>(entrepôt, commandes, transport)</i>, de l'archi à la prod. <b>React · Next.js · TypeScript</b> multi-tenant sur API Directus : gestion d'état, <b>temps réel (Socket.IO)</b>, <b>RBAC</b> par rôle, design system maison. En prod sur <b>supplyos.com</b>.</p>
+          </li>
+          <li data-reveal>
+            <span class="tag">Beta V2</span>
+            <p>Construction &amp; maintenance back/front de la beta V2 et de ses <b>3 fronts</b> (préparation <b>HubOS</b>, client <b>WeWeb</b>, admin <b>back-office</b>) sur un backend Directus V1 en <b>clean architecture</b>. Extensions pour <b>3 marketplaces</b> (Shopify, ManoMano, Squarespace) &amp; <b>3 transporteurs</b> (Colissimo, UPS, DPD) — commandes, sync produits, étiquettes, tracking ; Stripe, Sendgrid. Micro-services <b>Xano</b> (SMS &amp; mails) et automatisations <b>Make</b> (SFTP, notifications Slack &amp; mail).</p>
+          </li>
+          <li data-reveal>
+            <span class="tag">BLOC · RentOS</span>
+            <p><b>BLOC</b> : extensions backend Directus en clean architecture (logique métier, endpoints REST &amp; automatisations). <b>RentOS</b> : front de l'app de retour produit <b>Boulanger Location</b> (Next.js · TypeScript · Chakra UI), du composant à la mise en prod.</p>
+          </li>
+        </ol>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ 03 PARCOURS ============ -->
+  <section class="section" id="parcours">
+    <header class="section__head">
+      <span class="section__num mono">03</span>
+      <h2 class="section__title" data-split-words>Expérience — parcours</h2>
+      <p class="section__lead mono" data-reveal>Du stage en analyse de crédit au lead technique, en cinq étapes.</p>
+    </header>
+
+    <div class="timeline" id="timeline">
+      <div class="timeline__rail" aria-hidden="true"><i id="timelineFill"></i></div>
+
+      <article class="tl" data-reveal>
+        <div class="tl__when mono"><b>Fév. 2025 → Sept. 2025</b><span>Here 2 Be</span><em>Antananarivo · Temps partiel</em></div>
+        <div class="tl__what">
+          <h3>Lead Developer No-code / Low-code</h3>
+          <p class="mono tl__tags">WeWeb · Supabase · FlutterFlow · Xano · Make</p>
+          <ul class="facts facts--flat">
+            <li><span class="tag">OTC Trade Log</span><p>Suivi &amp; analyse de trades (OTC Flow France) : <b>WeWeb + Supabase</b>, dashboard dynamique par rôle, intégration Figma → front.</p></li>
+            <li><span class="tag">Mochogo</span><p>Lead d'une app mobile (<b>FlutterFlow + Xano</b>) : architecture, base de données, déploiement, mentorat de l'équipe. Publiée : <a class="link" href="https://play.google.com" target="_blank" rel="noopener">Google Play ↗</a></p></li>
+            <li><span class="tag">Belfor MyReport</span><p>Ticketing avec récupération automatique des mails (<b>Make → Xano</b>), vues kanban / calendar / liste, notifications.</p></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl" data-reveal>
+        <div class="tl__when mono"><b>Oct. 2022 → Fév. 2023</b><span>Bocasay</span><em>Antananarivo</em></div>
+        <div class="tl__what">
+          <h3>Développeur Front-end React</h3>
+          <p class="mono tl__tags">React.js · Redux Toolkit · Material UI · Amadeus API</p>
+          <ul class="facts facts--flat">
+            <li><span class="tag">Facilita Trip</span><p>Plateforme de voyages sur-mesure : front <b>React + Redux Toolkit</b> sur l'<b>API Amadeus</b> (vols &amp; hôtels), composants réutilisables et <b>génération PDF côté client</b> (React-PDF) — de l'UI à l'intégration des services tiers. En ligne : <a class="link" href="https://facilitatrip.net" target="_blank" rel="noopener">facilitatrip.net ↗</a></p></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl" data-reveal>
+        <div class="tl__when mono"><b>Déc. 2021 → Oct. 2022</b><span>Paminnov</span><em>Antananarivo</em></div>
+        <div class="tl__what">
+          <h3>Développeur Web &amp; Mobile — Full-stack JS</h3>
+          <p class="mono tl__tags">React · React Native · Node Express · MySQL · DocuSign</p>
+          <ul class="facts facts--flat">
+            <li><span class="tag">Utocat</span><p>Gestion des titres non cotés (finance), <b>full-stack de bout en bout</b> : API <b>Node/Express + MySQL</b>, front React, signature électronique <b>DocuSign</b>, génération PDF, packaging <b>Docker</b>. <a class="link" href="https://utocat.com" target="_blank" rel="noopener">utocat.com ↗</a></p></li>
+            <li><span class="tag">Memoracar</span><p>App mobile <b>React Native</b> de suivi véhicule, <b>de la conception au déploiement</b> : scan de factures, build Android natif, publication iOS TestFlight. Presse : <a class="link" href="https://www.maddyness.com" target="_blank" rel="noopener">Maddyness ↗</a></p></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl" data-reveal>
+        <div class="tl__when mono"><b>2021</b><span>Grandir Dignement</span><em>Antananarivo</em></div>
+        <div class="tl__what">
+          <h3>Responsable Logistique &amp; Informatique</h3>
+          <p class="mono tl__tags">Parc informatique · Maintenance · Support · Installation &amp; mises à jour</p>
+          <ul class="facts facts--flat">
+            <li><span class="tag">Parc IT</span><p>Gestion de l'ensemble du <b>matériel informatique</b> de l'entreprise : approvisionnement et suivi des équipements.</p></li>
+            <li><span class="tag">Maintenance</span><p>Maintien en condition opérationnelle du matériel et des <b>logiciels</b> : maintenance informatique, <b>installation et mises à jour</b> des logiciels, support aux utilisateurs.</p></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl" data-reveal>
+        <div class="tl__when mono"><b>Juin 2020 → Déc. 2020</b><span>BNI — Antsenakely</span><em>Antsirabe · Stage</em></div>
+        <div class="tl__what">
+          <h3>Assistant gestionnaire — Analyse de crédit</h3>
+          <p class="mono tl__tags">Analyse de crédit · Éligibilité · Solvabilité · Finance</p>
+          <ul class="facts facts--flat">
+            <li><span class="tag">Analyse crédit</span><p>Étude des <b>dossiers de crédit</b> pour évaluer l'<b>éligibilité</b> et la capacité de remboursement des entreprises emprunteuses.</p></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 04 PRODUITS ============ -->
+  <section class="section section--alt" id="produits">
+    <header class="section__head">
+      <span class="section__num mono">04</span>
+      <h2 class="section__title" data-split-words>Produits SupplyOS</h2>
+      <p class="section__lead mono" data-reveal>Fonctionnalités livrées &amp; défis techniques résolus.</p>
+    </header>
+
+    <div class="cards">
+      <article class="card" data-reveal data-tilt>
+        <h3>Supply OS — Plateforme</h3>
+        <p>Cœur SaaS B2B : entrepôt (WMS), commandes (OMS), transport (TMS), produits (PIM), facturation &amp; réclamations.</p>
+        <div class="card__chal"><span class="badge">BACK</span><p>Isolation <b>multi-tenant + RBAC</b> par rôle et <b>moteur de tarification transport</b> (marge, diesel, suppléments).</p></div>
+      </article>
+
+      <article class="card" data-reveal data-tilt>
+        <h3>HubOS — WMS entrepôt</h3>
+        <p>App opérateurs : préparation de commandes, inventaire, mouvements de stock, retours.</p>
+        <div class="card__chal"><span class="badge badge--full">FULL</span><p><b>Flux de déstockage cohérents</b> (idempotence) et <b>UI virtualisée</b> sur gros volumes.</p></div>
+      </article>
+
+      <article class="card" data-reveal data-tilt>
+        <h3>Connecteurs Transporteurs</h3>
+        <p>Colissimo, DPD, Chronopost, TNT, FedEx, Geodis, Kuehne+Nagel, Mondial Relay — tarifs, étiquettes, tracking, enlèvements.</p>
+        <div class="card__chal"><span class="badge">BACK</span><p>Unifier des <b>protocoles hétérogènes</b> (SOAP WSSE, REST OAuth2, EDI EDIFACT, MD5) derrière un même <b>port</b>.</p></div>
+      </article>
+
+      <article class="card" data-reveal data-tilt>
+        <h3>Connecteurs Marketplaces</h3>
+        <p>Shopify, Amazon SP-API, Mirakl, ManoMano, Squarespace, Sellermania — import commandes, sync stock, fulfillment.</p>
+        <div class="card__chal"><span class="badge">BACK</span><p><b>OAuth / HMAC</b> par plateforme et <b>synchronisation</b> commandes ↔ stock multi-canal.</p></div>
+      </article>
+
+      <article class="card" data-reveal data-tilt>
+        <h3>Back-office</h3>
+        <p>Console ops : gestion des tenants, configuration des modules, suivi opérationnel de la plateforme.</p>
+        <div class="card__chal"><span class="badge badge--full">FULL</span><p><b>Administration multi-tenant</b> sécurisée — droits fins &amp; actions transverses.</p></div>
+      </article>
+
+      <article class="card" data-reveal data-tilt>
+        <h3>Ticketing</h3>
+        <p>Communication unifiée entre Supply OS, tenants, ops (Back-office) et opérateurs entrepôt (HubOS).</p>
+        <div class="card__chal"><span class="badge badge--full">FULL</span><p><b>Backbone collaboratif</b> transverse aux 3 produits.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 05 PROFIL ============ -->
+  <section class="section" id="profil">
+    <header class="section__head">
+      <span class="section__num mono">05</span>
+      <h2 class="section__title" data-split-words>Formation &amp; profil</h2>
+    </header>
+
+    <div class="panels">
+      <div class="panel" data-reveal>
+        <h3 class="mono">Formation</h3>
+        <ul class="edu">
+          <li><b class="mono">2019</b><div><strong>Master II — Mathématique &amp; Informatique pour la Science Sociale</strong><span>Faculté des Sciences, Université de Fianarantsoa</span></div></li>
+          <li><b class="mono">2012</b><div><strong>Baccalauréat Série C</strong><span>Lycée Rakotoarisoa Ambositra</span></div></li>
+          <li><b class="mono">2010</b><div><strong>DELF B1</strong><span>Alliance Française Ambositra</span></div></li>
+        </ul>
+      </div>
+
+      <div class="panel" data-reveal>
+        <h3 class="mono">Langues</h3>
+        <ul class="langs">
+          <li><span>Malagasy</span><i class="mono">Natif</i><b class="bar" style="--lvl:100%"></b></li>
+          <li><span>Français</span><i class="mono">Courant</i><b class="bar" style="--lvl:88%"></b></li>
+          <li><span>Anglais</span><i class="mono">Lu / écrit</i><b class="bar" style="--lvl:62%"></b></li>
+        </ul>
+
+        <h3 class="mono mt">Qualités</h3>
+        <ul class="chips chips--out">
+          <li>Réactif</li><li>Curieux</li><li>Autonome</li><li>Autodidacte</li><li>Orienté solutions</li>
+        </ul>
+      </div>
+
+      <div class="panel" data-reveal>
+        <h3 class="mono">Projet de mémoire</h3>
+        <p class="panel__p"><b>Caméra de surveillance domestique</b> avec reconnaissance automatique de visage et d'émotion.</p>
+        <ul class="chips chips--out"><li>C++</li><li>OpenCV</li><li>LeNet</li><li>MySQL</li></ul>
+
+        <h3 class="mono mt">Centres d'intérêt</h3>
+        <ul class="hobbies">
+          <li><span aria-hidden="true">📷</span>Photographie</li>
+          <li><span aria-hidden="true">🎸</span>Guitare</li>
+          <li><span aria-hidden="true">🤝</span>Bénévolat associatif</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact" id="contact">
+    <div class="contact__inner">
+      <p class="kicker mono" data-reveal><i></i> DISPONIBLE — OPEN TO WORK</p>
+      <h2 class="contact__title"><span class="line" data-split>PARLONS</span><span class="line" data-split>DE VOTRE <em>PRODUIT</em></span></h2>
+      <p class="contact__lead" data-reveal>De l'analyse du besoin à la mise en production — avec un workflow de développement agentique qui accélère toute l'équipe.</p>
+
+      <div class="contact__actions" data-reveal>
+        <a class="btn btn--primary" href="mailto:herinirinalucarsonrandrianariv@gmail.com" data-magnetic><span>M'écrire</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></a>
+        <button class="btn" id="pdfBtnFoot" type="button" data-magnetic><span>Télécharger le CV (PDF)</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v3h16v-3"/></svg></button>
+      </div>
+
+      <ul class="contact__links mono" data-reveal>
+        <li><a href="https://github.com/LucasRandrianarivo" target="_blank" rel="noopener">GitHub ↗</a></li>
+        <li><a href="https://www.linkedin.com/in/herinirina-luc-arson" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        <li><a href="https://supplyos.com" target="_blank" rel="noopener">supplyos.com ↗</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="foot mono">
+    <span>RANDRIANARIVO H. L. ARSON</span>
+    <span>Lead Developer Full-stack JS</span>
+    <span>CV 2026 · <a href="#top">Retour en haut ↑</a></span>
+  </footer>
+</main>
+
+<div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ================= DOCUMENT CV (imprimé / PDF) ================= -->
+<div class="cv" id="cvDoc" aria-hidden="true">
+
+  <!-- ---------- PAGE 1 ---------- -->
+  <section class="cv-page">
+    <div class="cv-c cv-c--tl"></div><div class="cv-c cv-c--tr"></div>
+    <div class="cv-c cv-c--bl"></div><div class="cv-c cv-c--br"></div>
+
+    <header class="cv-head">
+      <div>
+        <p class="cv-kicker">— CURRICULUM VITAE — 2026</p>
+        <h1 class="cv-name">RANDRIANARIVO<br>HERINIRINA <em>LUC</em><br>ARSON</h1>
+        <p class="cv-role">&gt; Lead Developer · Full-stack JavaScript</p>
+      </div>
+      <div class="cv-photo">
+        <span class="cv-pagemark">CV / 2026</span>
+        <img src="assets/img/portrait.jpg" alt="" id="cvPortrait">
+      </div>
+    </header>
+
+    <p class="cv-intro">Développeur full-stack, je conçois et je livre des produits <mark>de bout en bout</mark>, de la base de données à l'interface. 6 ans passés à construire du <mark>SaaS B2B</mark> aux côtés de SupplyOS (spécialiste logistique &amp; e-commerce) m'ont rendu <mark>autonome, rapide et adaptable</mark>. Stack React / Node / Directus + workflow IA Claude Code, et l'envie d'explorer <mark>de nouveaux domaines</mark>.</p>
+
+    <ul class="cv-contact">
+      <li><span>LOCALISATION</span><b>Antananarivo, MG · UTC+3</b></li>
+      <li><span>GITHUB</span><b class="u">github.com/LucasRandrianarivo</b></li>
+      <li><span>EMAIL</span><b>herinirinalucarsonrandrianariv@gmail.com</b></li>
+      <li><span>LINKEDIN</span><b class="u">in/herinirina-luc-arson</b></li>
+    </ul>
+
+    <ul class="cv-stats">
+      <li><b>06<i>+</i></b><span>Années d'expérience</span></li>
+      <li><b>15<i>+</i></b><span>Projets livrés</span></li>
+      <li><b>10<i>+</i></b><span>Connecteurs &amp; intégrations</span></li>
+      <li><b>04</b><span>Modules métier WMS/OMS/TMS/PIM</span></li>
+    </ul>
+
+    <h2 class="cv-h2"><i>01</i> STACK TECHNIQUE</h2>
+    <table class="cv-stack">
+      <tr><th>FRONTEND</th><td><b>React</b> · <b>Next.js</b> · <b>TypeScript</b> · React Native · Redux Toolkit · Material UI · Chakra UI · Ant Design · Styled Components</td></tr>
+      <tr><th>BACKEND</th><td><b>Node.js</b> · <b>NestJS</b> · Express · REST API · GraphQL · TypeORM · <b>Architecture hexagonale</b> · Tests (Jest / e2e)</td></tr>
+      <tr><th>BASE DE DONNÉES</th><td><b>PostgreSQL</b> · <b>MongoDB</b> · MySQL · SQLite · Supabase</td></tr>
+      <tr><th>NO-CODE / CMS</th><td>WeWeb · <b>Directus</b> · Xano · FlutterFlow · Make</td></tr>
+      <tr><th>DÉVELOPPEMENT<br>AGENTIQUE / IA</th><td><b>Claude Code</b> · <b>Création de skills</b> · <b>sub-agents custom</b> · Règles <b>CLAUDE.md</b> · Slash commands · MCP servers · Cursor · Prompt engineering</td></tr>
+      <tr><th>DEVOPS &amp; TOOLS</th><td><b>Docker</b> · Git / GitHub / GitLab · <b>Linear</b> · Figma · Postman · Méthode Agile</td></tr>
+    </table>
+
+    <h2 class="cv-h2"><i>02</i> EXPÉRIENCE — RÉCENTE</h2>
+    <div class="cv-exp">
+      <aside>
+        <p class="cv-date">● Mars 2023 → Présent</p>
+        <p class="cv-org">SupplyTech</p>
+        <p class="cv-loc">Antananarivo · Lille (FR)</p>
+        <p class="cv-note">3+ ans sur Supply OS</p>
+        <p class="cv-url">↗ supplyos.com</p>
+      </aside>
+      <div>
+        <p class="cv-job">Développeur Full-stack JS → Lead</p>
+        <p class="cv-tags">React · Node.js · Directus · WeWeb · Next.js · TypeScript · Architecture · Team Lead · Claude Code</p>
+        <ul class="cv-facts">
+          <li><span class="cv-tag">LEAD — DEPUIS JAN. 2026</span> <b>Lead de la Supply OS V3</b> — refonte complète en <b>architecture hexagonale (Directus + NestJS)</b>, toujours hands-on. <i>Métier</i> : de l'analyse des besoins au delivery (cahiers des charges, roadmap &amp; estimations, impacts technico-commerciaux). <i>Technique</i> : découpage <b>domaine / ports / adapters</b>, multi-tenant, <b>tests unit + e2e Postgres</b>, <b>code reviews</b>, et workflow <b>Claude Code industrialisé</b> (skills &amp; sub-agents custom, CLAUDE.md, MCP) pour toute l'équipe.</li>
+          <li><span class="cv-tag">SUPPLY OS V2</span> Front reconstruit <i>from-scratch</i> de la plateforme SaaS logistique <i>(entrepôt, commandes, transport)</i>, de l'archi à la prod. <b>React · Next.js · TypeScript</b> multi-tenant sur API Directus : gestion d'état, <b>temps réel (Socket.IO)</b>, <b>RBAC</b> par rôle, design system maison. En prod sur <b>supplyos.com</b>.</li>
+          <li><span class="cv-tag">BETA V2</span> Construction &amp; maintenance back/front de la beta V2 et de ses <b>3 fronts</b> (préparation <b>HubOS</b>, client <b>WeWeb</b>, admin <b>back-office</b>) sur un backend Directus V1 en <b>clean architecture</b>. Extensions pour <b>3 marketplaces</b> (Shopify, ManoMano, Squarespace) &amp; <b>3 transporteurs</b> (Colissimo, UPS, DPD) — commandes, sync produits, étiquettes, tracking ; Stripe, Sendgrid. Micro-services <b>Xano</b> (SMS &amp; mails) et automatisations <b>Make</b> (SFTP, notifications Slack &amp; mail).</li>
+          <li><span class="cv-tag">BLOC · RENTOS</span> <b>BLOC</b> : extensions backend Directus en clean architecture (logique métier, endpoints REST &amp; automatisations). <b>RentOS</b> : front de l'app de retour produit <b>Boulanger Location</b> (Next.js · TypeScript · Chakra UI), du composant à la mise en prod.</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="cv-foot"><span>RANDRIANARIVO H. L. ARSON · Lead Developer Full-stack JS</span><span>01 / 02</span></footer>
+  </section>
+
+  <!-- ---------- PAGE 2 ---------- -->
+  <section class="cv-page">
+    <div class="cv-c cv-c--tl"></div><div class="cv-c cv-c--tr"></div>
+    <div class="cv-c cv-c--bl"></div><div class="cv-c cv-c--br"></div>
+
+    <header class="cv-runhead"><span>RANDRIANARIVO H. L. ARSON · Lead Developer Full-stack JS</span><span class="cv-red">02 / 02</span></header>
+
+    <div class="cv-cols">
+      <div class="cv-col-main">
+        <h2 class="cv-h2"><i>03</i> EXPÉRIENCE — PARCOURS</h2>
+
+        <div class="cv-exp cv-exp--sm">
+          <aside><p class="cv-date">Fév. 2025 → Sept. 2025</p><p class="cv-org">Here 2 Be</p><p class="cv-loc">Antananarivo</p><p class="cv-note">Temps partiel</p></aside>
+          <div>
+            <p class="cv-job">Lead Developer No-code / Low-code</p>
+            <p class="cv-tags">WeWeb · Supabase · FlutterFlow · Xano · Make</p>
+            <ul class="cv-facts">
+              <li><span class="cv-tag">OTC TRADE LOG</span> Suivi &amp; analyse de trades (OTC Flow France) : <b>WeWeb + Supabase</b>, dashboard dynamique par rôle, intégration Figma → front.</li>
+              <li><span class="cv-tag">MOCHOGO</span> Lead d'une app mobile (<b>FlutterFlow + Xano</b>) : architecture, base de données, déploiement, mentorat de l'équipe. Publiée : <span class="cv-url">Google Play ↗</span></li>
+              <li><span class="cv-tag">BELFOR MYREPORT</span> Ticketing avec récupération automatique des mails (<b>Make → Xano</b>), vues kanban / calendar / liste, notifications.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-exp cv-exp--sm">
+          <aside><p class="cv-date">Oct. 2022 → Fév. 2023</p><p class="cv-org">Bocasay</p><p class="cv-loc">Antananarivo</p></aside>
+          <div>
+            <p class="cv-job">Développeur Front-end React</p>
+            <p class="cv-tags">React.js · Redux Toolkit · Material UI · Amadeus API</p>
+            <ul class="cv-facts">
+              <li><span class="cv-tag">FACILITA TRIP</span> Plateforme de voyages sur-mesure : front <b>React + Redux Toolkit</b> sur l'<b>API Amadeus</b> (vols &amp; hôtels), composants réutilisables et <b>génération PDF côté client</b> (React-PDF) — de l'UI à l'intégration des services tiers. En ligne : <span class="cv-url">facilitatrip.net ↗</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-exp cv-exp--sm">
+          <aside><p class="cv-date">Déc. 2021 → Oct. 2022</p><p class="cv-org">Paminnov</p><p class="cv-loc">Antananarivo</p></aside>
+          <div>
+            <p class="cv-job">Développeur Web &amp; Mobile — Full-stack JS</p>
+            <p class="cv-tags">React · React Native · Node Express · MySQL · DocuSign</p>
+            <ul class="cv-facts">
+              <li><span class="cv-tag">UTOCAT</span> Gestion des titres non cotés (finance), <b>full-stack de bout en bout</b> : API <b>Node/Express + MySQL</b>, front React, signature électronique <b>DocuSign</b>, génération PDF, packaging <b>Docker</b>. <span class="cv-url">utocat.com ↗</span></li>
+              <li><span class="cv-tag">MEMORACAR</span> App mobile <b>React Native</b> de suivi véhicule, <b>de la conception au déploiement</b> : scan de factures, build Android natif, publication iOS TestFlight. Presse : <span class="cv-url">Maddyness ↗</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-exp cv-exp--sm">
+          <aside><p class="cv-date">2021</p><p class="cv-org">Grandir Dignement</p><p class="cv-loc">Antananarivo</p></aside>
+          <div>
+            <p class="cv-job">Responsable Logistique &amp; Informatique</p>
+            <p class="cv-tags">Parc informatique · Maintenance · Support · Installation &amp; mises à jour</p>
+            <ul class="cv-facts">
+              <li><span class="cv-tag">PARC IT</span> Gestion de l'ensemble du <b>matériel informatique</b> de l'entreprise : approvisionnement et suivi des équipements.</li>
+              <li><span class="cv-tag">MAINTENANCE</span> Maintien en condition opérationnelle du matériel et des <b>logiciels</b> : maintenance informatique, <b>installation et mises à jour</b> des logiciels, support aux utilisateurs.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-exp cv-exp--sm">
+          <aside><p class="cv-date">Juin 2020 → Déc. 2020</p><p class="cv-org">BNI — Antsenakely</p><p class="cv-loc">Antsirabe · Stage</p></aside>
+          <div>
+            <p class="cv-job">Assistant gestionnaire — Analyse de crédit</p>
+            <p class="cv-tags">Analyse de crédit · Éligibilité · Solvabilité · Finance</p>
+            <ul class="cv-facts">
+              <li><span class="cv-tag">ANALYSE CREDIT</span> Étude des <b>dossiers de crédit</b> pour évaluer l'<b>éligibilité</b> et la capacité de remboursement des entreprises emprunteuses.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <aside class="cv-col-side">
+        <h3 class="cv-h3">FORMATION</h3>
+        <div class="cv-edu"><p class="cv-y">2019</p><p class="cv-t">Master II — Mathématique &amp; Informatique pour la Science Sociale</p><p class="cv-s">Faculté des Sciences, Université de Fianarantsoa</p></div>
+        <div class="cv-edu"><p class="cv-y">2012</p><p class="cv-t">Baccalauréat Série C</p><p class="cv-s">Lycée Rakotoarisoa Ambositra</p></div>
+        <div class="cv-edu"><p class="cv-y">2010</p><p class="cv-t">DELF B1</p><p class="cv-s">Alliance Française Ambositra</p></div>
+
+        <h3 class="cv-h3">LANGUES</h3>
+        <ul class="cv-lang">
+          <li><span>Malagasy</span><i>NATIF</i></li>
+          <li><span>Français</span><i>COURANT</i></li>
+          <li><span>Anglais</span><i>LU / ÉCRIT</i></li>
+        </ul>
+
+        <h3 class="cv-h3">QUALITÉS</h3>
+        <ul class="cv-chips"><li>Réactif</li><li>Curieux</li><li>Autonome</li><li>Autodidacte</li><li>Orienté solutions</li></ul>
+
+        <h3 class="cv-h3">CENTRES D'INTÉRÊT</h3>
+        <p class="cv-s2">Photographie<br>Guitare<br>Bénévolat associatif</p>
+
+        <h3 class="cv-h3">PROJET DE MÉMOIRE</h3>
+        <p class="cv-s2"><b>Caméra de surveillance domestique</b> avec reconnaissance automatique de visage et d'émotion. C++ / OpenCV / LeNet / MySQL.</p>
+      </aside>
+    </div>
+
+    <h2 class="cv-h2"><i>04</i> PRODUITS SUPPLYOS — FONCTIONNALITÉS &amp; DÉFIS TECHNIQUES</h2>
+    <div class="cv-prod">
+      <div class="cv-p"><p class="cv-pt">Supply OS — Plateforme</p><p class="cv-pd">Cœur SaaS B2B : entrepôt (WMS), commandes (OMS), transport (TMS), produits (PIM), facturation &amp; réclamations.</p><p class="cv-pc"><span class="cv-b">BACK</span> Isolation <b>multi-tenant + RBAC</b> par rôle et <b class="cv-red">moteur de tarification transport</b> (marge, diesel, suppléments).</p></div>
+      <div class="cv-p"><p class="cv-pt">HubOS — WMS entrepôt</p><p class="cv-pd">App opérateurs : préparation de commandes, inventaire, mouvements de stock, retours.</p><p class="cv-pc"><span class="cv-b">FULL</span> <b class="cv-red">Flux de déstockage cohérents</b> (idempotence) et <b class="cv-red">UI virtualisée</b> sur gros volumes.</p></div>
+      <div class="cv-p"><p class="cv-pt">Connecteurs Transporteurs</p><p class="cv-pd">Colissimo, DPD, Chronopost, TNT, FedEx, Geodis, Kuehne+Nagel, Mondial Relay — tarifs, étiquettes, tracking, enlèvements.</p><p class="cv-pc"><span class="cv-b">BACK</span> Unifier des <b class="cv-red">protocoles hétérogènes</b> (SOAP WSSE, REST OAuth2, EDI EDIFACT, MD5) derrière un même <b>port</b>.</p></div>
+      <div class="cv-p"><p class="cv-pt">Connecteurs Marketplaces</p><p class="cv-pd">Shopify, Amazon SP-API, Mirakl, ManoMano, Squarespace, Sellermania — import commandes, sync stock, fulfillment.</p><p class="cv-pc"><span class="cv-b">BACK</span> <b class="cv-red">OAuth / HMAC</b> par plateforme et <b class="cv-red">synchronisation</b> commandes ↔ stock multi-canal.</p></div>
+      <div class="cv-p"><p class="cv-pt">Back-office</p><p class="cv-pd">Console ops : gestion des tenants, configuration des modules, suivi opérationnel de la plateforme.</p><p class="cv-pc"><span class="cv-b">FULL</span> <b class="cv-red">Administration multi-tenant</b> sécurisée — droits fins &amp; actions transverses.</p></div>
+      <div class="cv-p"><p class="cv-pt">Ticketing</p><p class="cv-pd">Communication unifiée entre Supply OS, tenants, ops (Back-office) et opérateurs entrepôt (HubOS).</p><p class="cv-pc"><span class="cv-b">FULL</span> <b class="cv-red">Backbone collaboratif</b> transverse aux 3 produits.</p></div>
+    </div>
+
+    <footer class="cv-foot"><span>RANDRIANARIVO H. L. ARSON · CV 2026</span><span class="cv-open">OPEN TO WORK ●</span></footer>
+  </section>
+</div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

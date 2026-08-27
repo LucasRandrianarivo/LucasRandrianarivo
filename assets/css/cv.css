@@ -1,0 +1,213 @@
+/* =========================================================
+   DOCUMENT CV — aperçu écran + impression / export PDF (A4)
+   Toujours en palette claire, même si le site est en dark.
+   ========================================================= */
+
+.cv{
+  --p-paper:#EDE9E3;
+  --p-ink:#141210;
+  --p-ink2:#45403A;
+  --p-muted:#8A8177;
+  --p-red:#D8402F;
+  --p-line:rgba(20,18,16,.22);
+  display:none;
+  color:var(--p-ink);
+  font-family:var(--f-display);
+}
+
+/* ---------- APERÇU ÉCRAN ---------- */
+body.cv-open{overflow:hidden}
+body.cv-open .cv{
+  display:block;position:fixed;inset:0;z-index:9500;overflow:auto;
+  background:#57534E;padding:80px 12px 40px;-webkit-overflow-scrolling:touch;
+  animation:cvIn .45s var(--ease);
+}
+@keyframes cvIn{from{opacity:0}to{opacity:1}}
+
+.cvbar{
+  position:fixed;top:0;left:0;right:0;z-index:9600;display:none;
+  align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding:12px clamp(12px,3vw,26px);background:#1C1A18;color:#EDE9E3;
+  font-family:var(--f-mono);font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;
+}
+body.cv-open .cvbar{display:flex}
+.cvbar__t{display:flex;align-items:center;gap:10px;min-width:0}
+.cvbar__t i{width:7px;height:7px;border-radius:50%;background:var(--p-red);flex:none}
+.cvbar__t span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cvbar__a{display:flex;gap:8px;align-items:center}
+.cvbar button{
+  display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;
+  border:1px solid rgba(237,233,227,.35);color:#EDE9E3;
+  font-family:inherit;font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;
+  transition:background .3s,color .3s,border-color .3s;
+}
+.cvbar button:hover{background:#EDE9E3;color:#1C1A18;border-color:#EDE9E3}
+.cvbar .is-primary{background:var(--p-red);border-color:var(--p-red);color:#fff}
+.cvbar .is-primary:hover{background:#fff;color:var(--p-red);border-color:#fff}
+.cvbar svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.cvbar__hint{opacity:.6;font-size:.58rem;text-transform:none;letter-spacing:.02em;width:100%}
+
+/* ---------- PAGE A4 ---------- */
+.cv-page{
+  position:relative;width:210mm;min-height:297mm;
+  margin:0 auto 18px;padding:12mm 12mm 11mm;
+  background:var(--p-paper);
+  font-size:8pt;line-height:1.38;
+  box-shadow:0 24px 60px -20px rgba(0,0,0,.6);
+  break-after:page;
+}
+.cv-page:last-child{break-after:auto;margin-bottom:0}
+.cv-page mark{background:linear-gradient(transparent 10%,rgba(216,64,47,.24) 10% 95%,transparent 95%);color:inherit}
+.cv-red{color:var(--p-red)}
+
+/* coins */
+.cv-c{position:absolute;width:5mm;height:5mm;border:.5mm solid var(--p-ink);opacity:.75}
+.cv-c--tl{top:6mm;left:6mm;border-right:0;border-bottom:0}
+.cv-c--tr{top:6mm;right:6mm;border-left:0;border-bottom:0}
+.cv-c--bl{bottom:6mm;left:6mm;border-right:0;border-top:0}
+.cv-c--br{bottom:6mm;right:6mm;border-left:0;border-top:0}
+
+/* en-tête */
+.cv-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8mm}
+.cv-kicker{font-family:var(--f-mono);font-size:6.6pt;letter-spacing:.16em;color:var(--p-red);text-transform:uppercase;margin-bottom:3mm}
+.cv-name{font-size:27pt;line-height:.92;font-weight:700;letter-spacing:-.035em;text-transform:uppercase}
+.cv-name em{font-style:italic;color:var(--p-red)}
+.cv-role{font-family:var(--f-mono);font-size:7.6pt;letter-spacing:.1em;color:var(--p-ink2);margin-top:3mm}
+
+.cv-photo{position:relative;width:32mm;flex:none}
+.cv-photo img{width:32mm;height:36mm;object-fit:cover;filter:grayscale(1) contrast(1.1);border:.4mm solid var(--p-ink);background:#CFC9BF}
+.cv-photo::after{content:"";position:absolute;right:-2mm;bottom:-2mm;width:32mm;height:36mm;border:.6mm solid var(--p-red);z-index:-1}
+.cv-pagemark{position:absolute;top:-6mm;right:0;font-family:var(--f-mono);font-size:6pt;letter-spacing:.14em;color:var(--p-muted)}
+
+.cv-intro{margin-top:3.6mm;font-size:7.8pt;line-height:1.46;color:var(--p-ink2);max-width:150mm}
+
+.cv-contact{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:3.4mm;padding:2.4mm 0;border-top:.3mm solid var(--p-line);border-bottom:.3mm solid var(--p-line)}
+.cv-contact li{display:grid;gap:1mm;min-width:0}
+.cv-contact span{font-family:var(--f-mono);font-size:5.8pt;letter-spacing:.13em;color:var(--p-muted)}
+.cv-contact b{font-family:var(--f-mono);font-size:6.6pt;font-weight:500;letter-spacing:.01em;overflow-wrap:anywhere;line-height:1.35}
+.cv-contact .u{text-decoration:underline;text-underline-offset:1.4pt}
+
+.cv-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:3mm;padding-bottom:2.8mm;border-bottom:.5mm solid var(--p-ink)}
+.cv-stats li{border-left:.3mm solid var(--p-line);padding-left:3mm}
+.cv-stats li:first-child{border-left:0;padding-left:0}
+.cv-stats b{display:block;font-size:19pt;font-weight:700;letter-spacing:-.04em;line-height:1}
+.cv-stats b i{color:var(--p-red);font-style:normal;font-size:.5em;vertical-align:super}
+.cv-stats span{display:block;font-family:var(--f-mono);font-size:5.6pt;letter-spacing:.1em;text-transform:uppercase;color:var(--p-muted);margin-top:1.6mm;line-height:1.35}
+
+/* titres de section */
+.cv-h2{
+  display:flex;align-items:center;gap:3mm;margin:4.4mm 0 2.4mm;
+  font-family:var(--f-mono);font-size:8pt;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+}
+.cv-h2 i{font-style:normal;color:var(--p-red);border:.3mm solid var(--p-red);padding:.4mm 1.6mm;font-size:6.4pt}
+.cv-h2::after{content:"";flex:1;height:.3mm;background:var(--p-line)}
+
+/* stack */
+.cv-stack{width:100%;border-collapse:collapse}
+.cv-stack th{
+  width:34mm;text-align:left;vertical-align:top;padding:1.5mm 4mm 1.5mm 0;
+  font-family:var(--f-mono);font-size:6.4pt;letter-spacing:.12em;color:var(--p-red);font-weight:500;line-height:1.3;
+}
+.cv-stack td{padding:1.5mm 0;font-size:7.4pt;color:var(--p-ink2);border-bottom:.2mm dotted var(--p-line)}
+.cv-stack tr:last-child td{border-bottom:0}
+.cv-stack b{color:var(--p-ink);font-weight:700}
+
+/* expérience */
+.cv-exp{display:grid;grid-template-columns:33mm 1fr;gap:5mm;padding-top:1mm}
+.cv-exp>div{border-left:.4mm solid var(--p-ink);padding-left:5mm}
+.cv-exp--sm{margin-bottom:2.6mm}
+.cv-date{font-family:var(--f-mono);font-size:6.4pt;letter-spacing:.09em;color:var(--p-red);text-transform:uppercase}
+.cv-org{font-size:10pt;font-weight:700;letter-spacing:-.02em;margin-top:1mm}
+.cv-exp--sm .cv-org{font-size:8.8pt}
+.cv-loc,.cv-note{font-family:var(--f-mono);font-size:5.8pt;letter-spacing:.08em;color:var(--p-muted);text-transform:uppercase;margin-top:.8mm}
+.cv-note{color:var(--p-red)}
+.cv-url{font-family:var(--f-mono);font-size:6pt;letter-spacing:.06em;color:var(--p-red);text-decoration:underline;text-underline-offset:1.4pt;margin-top:1.4mm;display:inline-block}
+.cv-job{font-size:8.8pt;font-weight:600;letter-spacing:-.01em}
+.cv-tags{font-family:var(--f-mono);font-size:6pt;letter-spacing:.08em;color:var(--p-muted);margin-top:1mm;text-transform:none}
+.cv-facts{margin-top:1.8mm;display:grid;gap:1.4mm}
+.cv-facts li{position:relative;padding-left:3.6mm;font-size:7.2pt;line-height:1.38;color:var(--p-ink2);text-align:justify}
+.cv-facts li::before{content:"";position:absolute;left:0;top:1.4mm;width:1.8mm;height:1.8mm;background:var(--p-red)}
+.cv-facts b{color:var(--p-ink);font-weight:600}
+.cv-facts i{font-style:italic;color:var(--p-ink)}
+.cv-tag{
+  display:inline-block;margin-right:1.6mm;padding:.4mm 1.6mm;background:var(--p-ink);color:var(--p-paper);
+  font-family:var(--f-mono);font-size:5.8pt;letter-spacing:.11em;text-transform:uppercase;vertical-align:1px;
+}
+
+/* page 2 : colonnes */
+.cv-runhead{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:6.4pt;letter-spacing:.13em;text-transform:uppercase;color:var(--p-muted);padding-bottom:2mm;border-bottom:.5mm solid var(--p-ink);margin-bottom:4mm}
+.cv-cols{display:grid;grid-template-columns:1fr 50mm;gap:6mm}
+.cv-col-side{border-left:.3mm solid var(--p-line);padding-left:6mm}
+.cv-h3{font-family:var(--f-mono);font-size:6.8pt;letter-spacing:.15em;color:var(--p-red);text-transform:uppercase;padding-bottom:1.4mm;border-bottom:.3mm solid var(--p-line);margin:3.8mm 0 2mm}
+.cv-col-side .cv-h3:first-child{margin-top:0}
+.cv-edu{margin-bottom:2.2mm}
+.cv-y{font-family:var(--f-mono);font-size:6.2pt;color:var(--p-red);letter-spacing:.1em}
+.cv-t{font-size:7.6pt;font-weight:600;line-height:1.3;margin-top:.6mm}
+.cv-s{font-size:6.4pt;color:var(--p-muted);line-height:1.3;margin-top:.6mm}
+.cv-s2{font-size:7pt;color:var(--p-ink2);line-height:1.42}
+.cv-lang li{display:flex;justify-content:space-between;gap:3mm;padding:1.1mm 0;border-bottom:.2mm dotted var(--p-line);font-size:7.6pt}
+.cv-lang li:last-child{border-bottom:0}
+.cv-lang i{font-style:normal;font-family:var(--f-mono);font-size:5.8pt;letter-spacing:.1em;color:var(--p-muted)}
+.cv-chips{display:flex;flex-wrap:wrap;gap:1.6mm}
+.cv-chips li{border:.25mm solid var(--p-line);padding:.8mm 2mm;font-family:var(--f-mono);font-size:5.8pt;letter-spacing:.07em;color:var(--p-ink2)}
+
+/* produits */
+.cv-prod{display:grid;grid-template-columns:1fr 1fr;gap:2.2mm 7mm}
+.cv-p{border-left:.4mm solid var(--p-ink);padding-left:3.5mm}
+.cv-pt{font-size:8pt;font-weight:700;letter-spacing:-.01em}
+.cv-pd{font-size:6.6pt;color:var(--p-muted);line-height:1.34;margin-top:.7mm}
+.cv-pc{font-size:6.9pt;color:var(--p-ink2);line-height:1.38;margin-top:1.1mm}
+.cv-b{display:inline-block;margin-right:1.4mm;padding:.3mm 1.4mm;background:var(--p-red);color:#fff;font-family:var(--f-mono);font-size:5.4pt;letter-spacing:.1em;font-weight:700;vertical-align:1px}
+.cv-p:nth-child(2n) .cv-b{background:var(--p-ink)}
+
+/* pied */
+.cv-foot{
+  position:absolute;left:12mm;right:12mm;bottom:7mm;display:flex;justify-content:space-between;
+  padding-top:2mm;border-top:.3mm solid var(--p-line);
+  font-family:var(--f-mono);font-size:5.8pt;letter-spacing:.13em;text-transform:uppercase;color:var(--p-muted);
+}
+.cv-open{color:var(--p-red)}
+
+/* ---------- IMPRESSION ---------- */
+@page{size:A4 portrait;margin:0}
+@media print{
+  html,body{background:#fff!important;margin:0!important;padding:0!important;height:auto!important;overflow:visible!important}
+  body>*{display:none!important}
+  .cv{display:block!important;position:static!important;inset:auto!important;padding:0!important;background:none!important;overflow:visible!important;animation:none!important}
+  .cv-page{
+    zoom:1!important;width:210mm!important;min-height:296.6mm;height:auto;
+    margin:0!important;box-shadow:none!important;page-break-after:always;break-after:page;
+  }
+  .cv-page:last-child{page-break-after:auto;break-after:auto}
+  .cvbar,.grain,.cursor,.scrollbar,.loader,.toast,.nav,.menu{display:none!important}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+}
+
+/* ---------- APERÇU MOBILE ---------- */
+@media (max-width:900px){
+  body.cv-open .cv{padding-top:110px}
+}
+
+/* photo absente : cadre tramé au lieu d'une image cassée */
+.cv-photo.is-empty img{background:repeating-linear-gradient(45deg,#D6D0C6 0 2.4mm,#E3DED4 2.4mm 4.8mm)}
+
+/* ---------- Page 1 : un peu plus aérée (elle a la place) ---------- */
+.cv-page:first-of-type .cv-name{font-size:30pt}
+.cv-page:first-of-type .cv-photo,
+.cv-page:first-of-type .cv-photo img,
+.cv-page:first-of-type .cv-photo::after{width:34mm}
+.cv-page:first-of-type .cv-photo img,
+.cv-page:first-of-type .cv-photo::after{height:38mm}
+.cv-page:first-of-type .cv-intro{font-size:8.2pt;line-height:1.56;margin-top:4.6mm}
+.cv-page:first-of-type .cv-contact{margin-top:4.6mm;padding:3mm 0}
+.cv-page:first-of-type .cv-contact b{font-size:6.9pt}
+.cv-page:first-of-type .cv-stats{margin-top:4mm;padding-bottom:4mm}
+.cv-page:first-of-type .cv-stats b{font-size:22pt}
+.cv-page:first-of-type .cv-h2{margin:5.6mm 0 3.2mm}
+.cv-page:first-of-type .cv-stack th{padding:2.1mm 4mm 2.1mm 0}
+.cv-page:first-of-type .cv-stack td{padding:2.1mm 0;font-size:7.8pt}
+.cv-page:first-of-type .cv-org{font-size:11pt}
+.cv-page:first-of-type .cv-job{font-size:9.4pt}
+.cv-page:first-of-type .cv-facts{gap:2.2mm;margin-top:2.4mm}
+.cv-page:first-of-type .cv-facts li{font-size:7.6pt;line-height:1.46;padding-left:4mm}
+.cv-page:first-of-type .cv-exp{grid-template-columns:34mm 1fr}
