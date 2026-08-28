@@ -41,3 +41,10 @@ assets/img/           déposer portrait.jpg ici
 
 **Export PDF** — bouton « Générer mon CV en PDF » → aperçu A4 → « Enregistrer en PDF »
 (marges : *Aucune*, cocher *Graphiques d'arrière-plan*).
+
+## Autres projets
+
+**[DevCard](https://github.com/LucasRandrianarivo/devcard)** — React · Vite, sans backend.
+Deux outils dans une même app : une carte de stats GitHub exportable en PNG, et un
+générateur de CV multilingue (contenu stocké par langue, quatre sections types,
+trois templates, réglages de mise en page avec compteur de feuilles, export PDF vectoriel).
